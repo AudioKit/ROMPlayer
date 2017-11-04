@@ -86,8 +86,8 @@ class AUMainController: UIViewController {
         
         // Set Default Knob/Control Values
         vol1Knob.range = -9 ... 3
-        vol1Knob.value = -1
-        conductor.sampler1.amplitude = -1
+        vol1Knob.value = -2
+        conductor.sampler1.amplitude = -2
         
         masterVolume.range = 0 ... 10.0
         masterVolume.value = 6.0
