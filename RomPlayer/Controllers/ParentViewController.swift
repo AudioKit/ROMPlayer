@@ -70,7 +70,7 @@ class ParentViewController: UIViewController {
         conductor.midi.addListener(self)
         
         // Generate random presets 🎲
-        randomNumbers = GKRandomDistribution(lowestValue: 0, highestValue: exsPresets.count - 1)
+        randomNumbers = GKShuffledDistribution(lowestValue: 0, highestValue: exsPresets.count - 1)
         currentPresetIndex = 0
         
         // Load Preset 🔊
