@@ -409,18 +409,13 @@ extension ParentViewController: AKMIDIListener  {
         self.conductor.tremolo.frequency = Double(pressure)/20.0
     }
    
-    /*
     // MIDI Setup Change
     func receivedMIDISetupChange() {
-        print("midi setup change")
-        print("midi.inputNames: \(midi.inputNames)")
-        
-        let listInputNames = midi.inputNames
-        
-        for inputNames in listInputNames {
-            print("inputNames: \(inputNames)")
-            midi.openInput(inputNames)
+        print("midi setup change, midi.inputNames: \(conductor.midi.inputNames)")
+        let inputNames = conductor.midi.inputNames
+        inputNames.forEach { inputName in
+            conductor.midi.openInput(inputName)
         }
     }
-   */
+   
 }
