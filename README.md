@@ -182,10 +182,10 @@ If this is driving you mad, this [thread](https://github.com/audiokit/AudioKit/i
 
 ## Thanks and Credits
 
-Huge thanks to all the Beta testers and the folks on the AudioKit Slack Group, AudioBus Forum, & Facebook iPad Muscian's groups! Without out your support and positive feedback and reviews, this would not be possible.
+Huge thanks to all the beta testers and the folks on the AudioKit Slack Group, AudioBus Forum, & Facebook iPad Musician group! Without your support and positive feedback and reviews, this would not be possible.
 
 ROM Player Code, UI, and Sounds by  
-[Matthew M. Fecher](mailto:matthew@audiokitpro.com) | Twitter [@goFecher](http://twitter.com/goFecher) | Github [@swiftcodex](http://github.com/swiftcodex) | 
+[Matthew M. Fecher](mailto:matthew@audiokitpro.com) | Twitter [@goFecher](http://twitter.com/goFecher) | Github [@swiftcodex](http://github.com/swiftcodex) 
 
 AudioKit Founder  
 [Aure Prochazka](http://twitter.com/audiokitman)
