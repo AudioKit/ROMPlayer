@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		14114AAB0957DB2FF3F0BAE6 /* Pods_RomPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3462380C85912B5B47237E /* Pods_RomPlayer.framework */; };
+		940FC29D1FDCD5CC00131899 /* PingPongDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940FC29C1FDCD5CB00131899 /* PingPongDelay.swift */; };
 		943017941F23DE4600A302B2 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9430178E1F23DE4600A302B2 /* Double+Extensions.swift */; };
 		9431F63C1F82CF11000A1718 /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431F63B1F82CF11000A1718 /* PresetCell.swift */; };
 		9431F6471F82CF52000A1718 /* Fatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431F6421F82CF52000A1718 /* Fatten.swift */; };
 		9431F6491F82CF52000A1718 /* FilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431F6441F82CF52000A1718 /* FilterSection.swift */; };
 		9431F64A1F82CF52000A1718 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431F6451F82CF52000A1718 /* Conductor.swift */; };
-		9431F64B1F82CF52000A1718 /* MultiDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431F6461F82CF52000A1718 /* MultiDelay.swift */; };
 		944156D61F2121CC00C139B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944156D51F2121CC00C139B9 /* AppDelegate.swift */; };
 		944156DB1F2121CC00C139B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944156D91F2121CC00C139B9 /* Main.storyboard */; };
 		944156DD1F2121CC00C139B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944156DC1F2121CC00C139B9 /* Assets.xcassets */; };
@@ -66,6 +66,7 @@
 /* Begin PBXFileReference section */
 		4E3462380C85912B5B47237E /* Pods_RomPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RomPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFBF0821F234E68AEA91234 /* Pods-RomPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RomPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-RomPlayer/Pods-RomPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		940FC29C1FDCD5CB00131899 /* PingPongDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingPongDelay.swift; sourceTree = "<group>"; };
 		9430178E1F23DE4600A302B2 /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		9431F63B1F82CF11000A1718 /* PresetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresetCell.swift; path = Cells/PresetCell.swift; sourceTree = "<group>"; };
 		9431F63D1F82CF24000A1718 /* AUMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AUMainController.swift; path = Controllers/AUMainController.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		9431F6421F82CF52000A1718 /* Fatten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fatten.swift; sourceTree = "<group>"; };
 		9431F6441F82CF52000A1718 /* FilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSection.swift; sourceTree = "<group>"; };
 		9431F6451F82CF52000A1718 /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
-		9431F6461F82CF52000A1718 /* MultiDelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDelay.swift; sourceTree = "<group>"; };
 		9431F64E1F82CF9E000A1718 /* SynthKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SynthKeyboard.swift; path = RomPlayer/Controls/SynthKeyboard.swift; sourceTree = "<group>"; };
 		9431F64F1F82D034000A1718 /* StepperStyleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StepperStyleKit.swift; path = RomPlayer/Controls/Buttons/StepperStyleKit.swift; sourceTree = "<group>"; };
 		9431F6501F82D034000A1718 /* SynthUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SynthUIButton.swift; path = RomPlayer/Controls/Buttons/SynthUIButton.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 				9431F6451F82CF52000A1718 /* Conductor.swift */,
 				9431F6421F82CF52000A1718 /* Fatten.swift */,
 				9431F6441F82CF52000A1718 /* FilterSection.swift */,
-				9431F6461F82CF52000A1718 /* MultiDelay.swift */,
+				940FC29C1FDCD5CB00131899 /* PingPongDelay.swift */,
 			);
 			path = AudioSystem;
 			sourceTree = "<group>";
@@ -434,6 +434,7 @@
 			files = (
 				947B45671F82D3D9009F2B7A /* FlatToggleStyleKit.swift in Sources */,
 				947B457A1F82D3F1009F2B7A /* PopUpPresetController.swift in Sources */,
+				940FC29D1FDCD5CC00131899 /* PingPongDelay.swift in Sources */,
 				947B456D1F82D3D9009F2B7A /* SynthUIButton.swift in Sources */,
 				94BAFC051F9D9039004212E1 /* MIDILearnable.swift in Sources */,
 				947B45691F82D3D9009F2B7A /* LedToggleStyleKit.swift in Sources */,
@@ -466,7 +467,6 @@
 				94BAFC031F9D902D004212E1 /* MIDIKnob.swift in Sources */,
 				947B45761F82D3EA009F2B7A /* AUMainController.swift in Sources */,
 				947B45781F82D3EA009F2B7A /* ParentViewController.swift in Sources */,
-				9431F64B1F82CF52000A1718 /* MultiDelay.swift in Sources */,
 				944F91081F7B03F300CB4A85 /* AutoPan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

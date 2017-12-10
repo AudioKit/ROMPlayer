@@ -19,8 +19,7 @@ class Conductor {
     var fatten: Fatten
     var filterSection: FilterSection
     var autopan: AutoPan
-    var multiDelay: MultiDelay
-    var multiDelayMixer: AKDryWetMixer
+    var multiDelay: PingPongDelay
     var masterVolume = AKMixer()
     var reverb: AKCostelloReverb
     var reverbMixer: AKDryWetMixer
@@ -56,10 +55,9 @@ class Conductor {
         autopan = AutoPan(filterSection)
         fatten = Fatten(autopan)
         
-        multiDelay = MultiDelay(fatten)
-        multiDelayMixer = AKDryWetMixer(fatten, multiDelay, balance: 0.0)
+        multiDelay = PingPongDelay(fatten)
         
-        masterVolume = AKMixer(multiDelayMixer)
+        masterVolume = AKMixer(multiDelay)
      
         reverb = AKCostelloReverb(masterVolume)
         

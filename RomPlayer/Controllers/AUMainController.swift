@@ -101,7 +101,6 @@ class AUMainController: UIViewController {
         
         delayFeedbackKnob.range = 0.0 ... 1.0
         delayFeedbackKnob.value = 0.25
-        conductor.multiDelay.feedbackTaps = 0.25
         
         delayMixKnob.value = 0.0
         delayToggle.value = 1
@@ -222,17 +221,21 @@ class AUMainController: UIViewController {
         }
         
         delayFeedbackKnob.callback = { value in
-            self.conductor.multiDelay.feedbackTaps = value
-            if value == 1.0 {
-                self.outputLabel.text = "Feedback Level: Blackhole!"
-            } else {
-                self.outputLabel.text = "Delay Feedback: \(value.percentageString)"
+            self.conductor.multiDelay.feedback = value
+            switch value {
+            case 0:
+                self.outputLabel.text = "Feedback: Basic Multi-taps"
+            case 0.99:
+                self.outputLabel.text = "Feedback: Blackhole!"
+            default:
+                self.outputLabel.text = "Feedback knob: \(value.decimalString)"
             }
         }
         
         delayMixKnob.callback = { value in
-            self.conductor.multiDelayMixer.balance = value
-            self.outputLabel.text = "Delay Wet: \(value.percentageString)"
+            guard self.delayToggle.value == 1 else { return }
+            self.conductor.multiDelay.balance = value
+            self.outputLabel.text = "Delay Dry/Wet: \(value.percentageString)"
         }
         
         autoPanRateKnob.callback = { value in
@@ -278,10 +281,11 @@ class AUMainController: UIViewController {
         delayToggle.callback = { value in
             if value == 0 {
                 self.outputLabel.text = "Delay Off"
-                self.conductor.multiDelayMixer.balance = 0
+                self.conductor.multiDelay.stop()
             } else {
                 self.outputLabel.text = "Delay On"
-                self.conductor.multiDelayMixer.balance = self.delayMixKnob.value
+                self.conductor.multiDelay.start()
+                self.conductor.multiDelay.balance = self.delayMixKnob.value
             }
         }
         
