@@ -70,12 +70,6 @@ class AUMainController: UIViewController {
         // Create array of MIDIKnobs
         midiKnobs = self.view.subviews.filter { $0 is MIDIKnob } as! [MIDIKnob]
         setupMIDILearnCallbacks()
-        
-        /*
-        // Uncomment the following lines to Pre-map common MIDI CC to Knobs
-        freqKnob.midiCC = 74 // MIDI Standard CC for filter cutoff freq
-        rezKnob.midiCC = 71 // MIDI Standard CC for filter resonance
-        */
     }
     
     //*****************************************************************
@@ -174,8 +168,7 @@ class AUMainController: UIViewController {
         
         distortKnob.callback = { value in
             self.conductor.decimator.rounding = value
-            let displayValue = Double.scaleRangeZeroToOne(value, rangeMin: 0.6, rangeMax: 0.99)
-            self.outputLabel.text = "Distort: \(displayValue.percentageString)"
+            self.outputLabel.text = "Distort: \(Double(self.distortKnob.knobValue).percentageString)"
         }
         
         crushKnob.callback = { value in

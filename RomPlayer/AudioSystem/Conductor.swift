@@ -7,14 +7,9 @@
 
 import AudioKit
 
-// TODO: New connection syntax??? Dave O'Neil
-
 class Conductor {
     
-    ///mwh test commit
-    
-    
-    /// Globally accessible singleton
+    /// Globally accessible
     static let sharedInstance = Conductor()
   
     var sequencer: AKSequencer!
@@ -29,7 +24,6 @@ class Conductor {
     var masterVolume = AKMixer()
     var reverb: AKCostelloReverb
     var reverbMixer: AKDryWetMixer
-    var verbLimiter: AKPeakLimiter
     let midi = AKMIDI()
 
     init() {
@@ -69,13 +63,7 @@ class Conductor {
      
         reverb = AKCostelloReverb(masterVolume)
         
-        // Boost reverb volume
-        verbLimiter = AKPeakLimiter(reverb)
-        verbLimiter.attackTime = 0.001 // Secs
-        verbLimiter.decayTime = 0.01 // Secs
-        verbLimiter.preGain = 3 // dB
-        
-        reverbMixer = AKDryWetMixer(masterVolume, verbLimiter, balance: 0.3)
+        reverbMixer = AKDryWetMixer(masterVolume, reverb, balance: 0.3)
        
         // Set Output & Start AudioKit
         AudioKit.output = reverbMixer
