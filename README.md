@@ -26,7 +26,7 @@ The AudioKit FM Player is built with this code:
 
 ## Getting Started
 
-I have tried to streamline this code and focus on the core-functionality to make it easy-to-understand. That being said, audio programming can be challenging. This may be difficult for complete beginners. And, new frameworks can be overwhelming, even for experienced developers. If there is enough interest in this code, I will try to make a "getting started" video in the future. 
+I have tried to streamline this code and focus on the core-functionality to make it easy-to-understand. That being said, audio programming can be challenging. This may be difficult for complete beginners. And, new frameworks can be overwhelming, even for experienced developers. 
 
 **CocoaPods**  
 This repo uses CocoaPods to easily add AudioKit to your project. 
@@ -58,9 +58,15 @@ You are free to use the instruments included in this repo as you see fit- In a g
 
 You can replace the included example sample instruments with your own instruments. 
 
+![add samples](https://i.imgur.com/TX0j9dy.jpg)
+
+1. Add your EXS24 files and samples to the `/Sounds/Sampler Instruments/` directory
+2. Type in the name of the instruments in the ParentViewController.swift file
+
+**Other Sampler File Formats**  
 This example code loads EXS24 intruments. For loading Sound Fonts or wave files, please see the [AKSampler](http://audiokit.io/docs/Classes/AKSampler.html) documentation for information on loading different sample types. 
 
-You can use a tool you already know (such as Kontakt) to create and arrange the sample instrument wave mapping and velocity layers. Then, use code to take the sounds to the next level. If you normally make Kontakt instruments, you can achieve good results by turning off the effects in your Kontakt instruments, and then converting them to EXS24. Then, remake the effects using AudioKit. That way, you'll have dynamic sounds and complete control over the effects. 
+You can use a tool you already know (such as Kontakt) to create and arrange the sample instrument key mapping and velocity layers. Then, you can easily convert Kontakt instruments to EXS24 with tools such as [this](http://www.chickensys.com/translator/). Then, remake the effects using AudioKit. That way, you'll have dynamic sounds and complete control over the effects. 
 
 ## Sound Manipulation
 
