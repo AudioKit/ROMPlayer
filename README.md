@@ -26,18 +26,18 @@ The AudioKit FM Player is built with this code:
 
 ## Getting Started
 
-I have tried to streamline this code and focus on the core-functionality to make it easy-to-understand. That being said, audio programming can be challenging. This may be difficult for complete beginners. And, new frameworks can be overwhelming, even for experienced developers. 
+I have tried to streamline this code. There is a focus on the core-functionality to make it easy-to-understand. That being said, audio programming can be challenging. This may be difficult for complete beginners. And, new frameworks can be overwhelming, even for experienced developers. 
 
 **CocoaPods**  
 This repo uses CocoaPods to easily add AudioKit to your project. 
 
 Using the `Terminal` app in your mac, change directories to the folder that contains this project. The correct directory contains a file called `podfile`
 
-Run `Pod Install` from the command line. This will add AudioKit & AudioKit UI to project
+Run `pod install` from the command line. This will add AudioKit & AudioKit UI to project
 
 Then open `RomPlayer.xcworkspace` in Xcode
 
-## Code Requirements
+## Requirements
 
 - Mac or computer running Xcode 9 ([Free Download](https://itunes.apple.com/us/app/xcode/id497799835?mt=12))
 - Some knowledge of programming, specifically Swift & the iOS SDK
@@ -147,7 +147,7 @@ Here's how to add a Host Icon to your app (the icons for AudioBus 3, GarageBand,
 Add these methods to your ParentViewController:
 [https://gist.github.com/swiftcodex/3b3dac2699a6e85c5d3fb86fe48e4ccb](https://gist.github.com/swiftcodex/3b3dac2699a6e85c5d3fb86fe48e4ccb)
 
-Then, add a view/imageview to your storyboard where you want the icon to appear. Connect it to the IBAction in the gist.
+Then, add a button/imageview to your storyboard where you want the icon to appear. Connect it to the IBAction in the gist.
 
 **Is there a way to listen for IAA MIDI in Swift?**  
 Here's a bit of code used in the FM Player to listen for IAA MIDI. I'm pretty sure there's a better way to do this. If anyone has any tips, please let us know. It was added to the ViewDidLoad method in the ParentViewController:
