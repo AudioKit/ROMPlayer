@@ -82,7 +82,7 @@ Additionally, these [docs and tips](https://developer.apple.com/library/content/
 
 IMPORTANT: You need to change the graphics to upload an app to the app store. Apple does not allow apps to use stock template graphics. Plus, you want your app to be part of the expression of your artistic vision. 
 
-For example, if you were releasing a new music album, you would not want to use some one else's album artwork. You would want your own! 
+For example, if you were releasing a new music album, you would not want to use someone else's album artwork. You would want your own! 
 
 Think of the GUI as an extension of your sample/music artform. It is a way to impress upon users your own style and give them a feel for your sonic personality. 
 
@@ -179,6 +179,26 @@ Fixing EXS24 file references is beyond the scope of this readme...
 You can fix file refrences with Logic. Or, if you're making Kontakt Libraries and then converting to EXS24 using something like [Chicken Systems Translator](http://www.chickensys.com/translator/), you can fix the file references by making sure you have everything checked properly on [this screen](http://www.chickensys.com/translator/documentation/options/fixreferences.html). And, a good tip is to run the file translating on the EXS24 files again once they are ALREADY in your app bundle folder (/Sounds/Sampler Instruments/). Sometimes I run the translator on EXS24 files twice for good measure.
 
 If this is driving you mad, this [thread](https://github.com/audiokit/AudioKit/issues/903) will help. 
+
+Q: How did you make sounds loop and sustain? (See the 'TX Brass' sample instrument for example)
+
+A: Luckily, there is no extra code needed. The loop points are set in the EXS24 files. For the looping presets in FM Player, I used Kontakt to set loop points in the audio files. When I converted to EXS, the loop points remained. The same is done with velocity layers. Those are all set in the sample files (and not in code). 
+
+Q: How many notes and layers should I sample for an instrument? 
+
+A: This is up to you. Sampling is the part of the process where you really get to use your artistic vision and ears. For FM Player, every preset sound was sampled with different settings. Here's the challenge: iOS storage space is at a premium. A sample library that takes up more space is not always better. More samples could lead to artifacts or loop point mistakes. The key is to find the right balance between storage space and musicality. Sample too much, eat up storage space. Sample not enough, miss out on tone variations and introduce aliasing.
+
+Q: That makes sense. But, what's a good starting place for sampling settings?
+
+A: For many instrument/synth sounds, 3 or 4 velocity layers is a good compromise between sound quality and storage space. Please keep in mind that many instruments do not have a linear tone curve. i.e. You may have to sample at different velocity points for each sound to capture its essence.
+
+Q: Do you recommend Mainstage AutoSampler?
+
+A: If you are making instruments for your own purposes, it might do the trick. It may not achieve the quality for a commercial "pro-level" iOS instrument. Professional sound designers and sample library producers spend  as much time handcrafting, sampling, and fine-tuning sounds as developers spend writing code. If sampling is not your thing, you may want to partner with a talented sound designer. 
+
+Q: I need help getting started. Can you Skype/help me?
+
+A: We are all volunteers. As we have many commitments, obligations, and projects, it is hard to find time for one-on-one assistance. Please do not be offended. For support, please visit [StackOverflow](https://stackoverflow.com/questions/tagged/audiokit?mixed=1) and tag your question “AudioKit”. We try to help where we can. Unfortunately, we do not have the bandwidth for phone or video support. By using StackOverflow it allows more people to benefit from your questions and answers. Thus, allowing us to help more people at once. We try to upvote and encourage all AudioKit questions. There is no shame with needing help or asking questions! You can often receive points on StackOverflow just for asking AudioKit related questions.
 
 ## Thanks and Credits
 
