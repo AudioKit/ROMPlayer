@@ -94,7 +94,7 @@ Luckily, I've already included the coding part of handling knobs in this repo. Y
 
 Or, if you want to just completely use graphics instead of code - 
 
-If you'd rather make knobs and controls with a graphic rendering software packgage that exports image frames (or a dedicated tool like KnobMan), here's some example code I wrote demonstrating using images to create knobs [here](https://github.com/swiftcodex/3D-Knobs).
+If you'd rather make knobs and controls with a graphic rendering software packgage that exports image frames (or a dedicated tool like KnobMan), here's some example code I wrote demonstrating using images to create knobs [here](https://github.com/analogcode/3D-Knobs).
 
 ![Knobs](http://audiokitpro.com/images/knob.gif) 
 
@@ -139,19 +139,19 @@ There's information on adding [AudioBus with AudioKit](http://audiokit.io/audiob
 Need more hints? I got you covered!  
 
 Here's a gist of the AudioBus 3 MIDI listening code in FM Player:
-[https://gist.github.com/swiftcodex/fa097afb59ee57ccd29e59dfb2526977](https://gist.github.com/swiftcodex/fa097afb59ee57ccd29e59dfb2526977)
+[https://gist.github.com/analogcode/fa097afb59ee57ccd29e59dfb2526977](https://gist.github.com/analogcode/fa097afb59ee57ccd29e59dfb2526977)
 
 **Host Icon**   
 Here's how to add a Host Icon to your app (the icons for AudioBus 3, GarageBand, etc).  
 
 Add these methods to your ParentViewController:
-[https://gist.github.com/swiftcodex/3b3dac2699a6e85c5d3fb86fe48e4ccb](https://gist.github.com/swiftcodex/3b3dac2699a6e85c5d3fb86fe48e4ccb)
+[https://gist.github.com/analogcode/3b3dac2699a6e85c5d3fb86fe48e4ccb](https://gist.github.com/analogcode/3b3dac2699a6e85c5d3fb86fe48e4ccb)
 
 Then, add a button/imageview to your storyboard where you want the icon to appear. Connect it to the IBAction in the gist.
 
 **Is there a way to listen for IAA MIDI in Swift?**  
 Here's a bit of code used in the FM Player to listen for IAA MIDI. I'm pretty sure there's a better way to do this. If anyone has any tips, please let us know. It was added to the ViewDidLoad method in the ParentViewController:
-[https://gist.github.com/swiftcodex/27b327d3ca71187ddc47715b19a50977](https://gist.github.com/swiftcodex/27b327d3ca71187ddc47715b19a50977)
+[https://gist.github.com/analogcode/27b327d3ca71187ddc47715b19a50977](https://gist.github.com/analogcode/27b327d3ca71187ddc47715b19a50977)
 
 Transport Controls - I don't have any experience adding transport controls with Swift. If you get them to work, please get in touch so that we may help other people.
 
@@ -205,7 +205,7 @@ A: We are all volunteers. As we have many commitments, obligations, and projects
 Huge thanks to all the beta testers and the folks on the AudioKit Slack Group, AudioBus Forum, & Facebook iPad Musician group! Without your support and positive feedback and reviews, this would not be possible.
 
 ROM Player Code, UI, and Sounds by  
-[Matthew M. Fecher](mailto:matthew@audiokitpro.com) | Twitter [@goFecher](http://twitter.com/goFecher) | Github [@swiftcodex](http://github.com/swiftcodex) 
+[Matthew M. Fecher](mailto:matthew@audiokitpro.com) | Twitter [@goFecher](http://twitter.com/goFecher) | Github [analogcode](http://github.com/analogcode) 
 
 AudioKit Founder  
 [Aure Prochazka](http://twitter.com/audiokitman)
