@@ -26,18 +26,18 @@ The AudioKit FM Player is built with this code:
 
 ## Getting Started
 
-I have tried to streamline this code and focus on the core-functionality to make it easy-to-understand. That being said, audio programming can be challenging. This may be difficult for complete beginners. And, new frameworks can be overwhelming, even for experienced developers. 
+I have tried to streamline this code. There is a focus on the core-functionality to make it easy-to-understand. That being said, audio programming can be challenging. This may be difficult for complete beginners. And, new frameworks can be overwhelming, even for experienced developers. 
 
 **CocoaPods**  
 This repo uses CocoaPods to easily add AudioKit to your project. 
 
 Using the `Terminal` app in your mac, change directories to the folder that contains this project. The correct directory contains a file called `podfile`
 
-Run `Pod Install` from the command line. This will add AudioKit & AudioKit UI to project
+Run `pod install` from the command line. This will add AudioKit & AudioKit UI to project
 
 Then open `RomPlayer.xcworkspace` in Xcode
 
-## Code Requirements
+## Requirements
 
 - Mac or computer running Xcode 9 ([Free Download](https://itunes.apple.com/us/app/xcode/id497799835?mt=12))
 - Some knowledge of programming, specifically Swift & the iOS SDK
@@ -82,7 +82,7 @@ Additionally, these [docs and tips](https://developer.apple.com/library/content/
 
 IMPORTANT: You need to change the graphics to upload an app to the app store. Apple does not allow apps to use stock template graphics. Plus, you want your app to be part of the expression of your artistic vision. 
 
-For example, if you were releasing a new music album, you would not want to use some one else's album artwork. You would want your own! 
+For example, if you were releasing a new music album, you would not want to use someone else's album artwork. You would want your own! 
 
 Think of the GUI as an extension of your sample/music artform. It is a way to impress upon users your own style and give them a feel for your sonic personality. 
 
@@ -94,7 +94,7 @@ Luckily, I've already included the coding part of handling knobs in this repo. Y
 
 Or, if you want to just completely use graphics instead of code - 
 
-If you'd rather make knobs and controls with a graphic rendering software packgage that exports image frames (or a dedicated tool like KnobMan), here's some example code I wrote demonstrating using images to create knobs [here](https://github.com/swiftcodex/3D-Knobs).
+If you'd rather make knobs and controls with a graphic rendering software packgage that exports image frames (or a dedicated tool like KnobMan), here's some example code I wrote demonstrating using images to create knobs [here](https://github.com/analogcode/3D-Knobs).
 
 ![Knobs](http://audiokitpro.com/images/knob.gif) 
 
@@ -139,19 +139,19 @@ There's information on adding [AudioBus with AudioKit](http://audiokit.io/audiob
 Need more hints? I got you covered!  
 
 Here's a gist of the AudioBus 3 MIDI listening code in FM Player:
-[https://gist.github.com/swiftcodex/fa097afb59ee57ccd29e59dfb2526977](https://gist.github.com/swiftcodex/fa097afb59ee57ccd29e59dfb2526977)
+[https://gist.github.com/analogcode/fa097afb59ee57ccd29e59dfb2526977](https://gist.github.com/analogcode/fa097afb59ee57ccd29e59dfb2526977)
 
 **Host Icon**   
 Here's how to add a Host Icon to your app (the icons for AudioBus 3, GarageBand, etc).  
 
 Add these methods to your ParentViewController:
-[https://gist.github.com/swiftcodex/3b3dac2699a6e85c5d3fb86fe48e4ccb](https://gist.github.com/swiftcodex/3b3dac2699a6e85c5d3fb86fe48e4ccb)
+[https://gist.github.com/analogcode/3b3dac2699a6e85c5d3fb86fe48e4ccb](https://gist.github.com/analogcode/3b3dac2699a6e85c5d3fb86fe48e4ccb)
 
-Then, add a view/imageview to your storyboard where you want the icon to appear. Connect it to the IBAction in the gist.
+Then, add a button/imageview to your storyboard where you want the icon to appear. Connect it to the IBAction in the gist.
 
 **Is there a way to listen for IAA MIDI in Swift?**  
 Here's a bit of code used in the FM Player to listen for IAA MIDI. I'm pretty sure there's a better way to do this. If anyone has any tips, please let us know. It was added to the ViewDidLoad method in the ParentViewController:
-[https://gist.github.com/swiftcodex/27b327d3ca71187ddc47715b19a50977](https://gist.github.com/swiftcodex/27b327d3ca71187ddc47715b19a50977)
+[https://gist.github.com/analogcode/27b327d3ca71187ddc47715b19a50977](https://gist.github.com/analogcode/27b327d3ca71187ddc47715b19a50977)
 
 Transport Controls - I don't have any experience adding transport controls with Swift. If you get them to work, please get in touch so that we may help other people.
 
@@ -180,12 +180,32 @@ You can fix file refrences with Logic. Or, if you're making Kontakt Libraries an
 
 If this is driving you mad, this [thread](https://github.com/audiokit/AudioKit/issues/903) will help. 
 
+Q: How did you make sounds loop and sustain? (See the 'TX Brass' sample instrument for example)
+
+A: Luckily, there is no extra code needed. The loop points are set in the EXS24 files. For the looping presets in FM Player, I used Kontakt to set loop points in the audio files. When I converted to EXS, the loop points remained. The same is done with velocity layers. Those are all set in the sample files (and not in code). 
+
+Q: How many notes and layers should I sample for an instrument? 
+
+A: This is up to you. Sampling is the part of the process where you really get to use your artistic vision and ears. For FM Player, every preset sound was sampled with different settings. Here's the challenge: iOS storage space is at a premium. A sample library that takes up more space is not always better. More samples could lead to artifacts or loop point mistakes. The key is to find the right balance between storage space and musicality. Sample too much, eat up storage space. Sample not enough, miss out on tone variations and introduce aliasing.
+
+Q: That makes sense. But, what's a good starting place for sampling settings?
+
+A: For many instrument/synth sounds, 3 or 4 velocity layers is a good compromise between sound quality and storage space. Please keep in mind that many instruments do not have a linear tone curve. i.e. You may have to sample at different velocity points for each sound to capture its essence.
+
+Q: Do you recommend Mainstage AutoSampler?
+
+A: If you are making instruments for your own purposes, it might do the trick. It may not achieve the quality for a commercial "pro-level" iOS instrument. Professional sound designers and sample library producers spend  as much time handcrafting, sampling, and fine-tuning sounds as developers spend writing code. If sampling is not your thing, you may want to partner with a talented sound designer. 
+
+Q: I need help getting started. Can you Skype/help me?
+
+A: We are all volunteers. As we have many commitments, obligations, and projects, it is hard to find time for one-on-one assistance. Please do not be offended. For support, please visit [StackOverflow](https://stackoverflow.com/questions/tagged/audiokit?mixed=1) and tag your question “AudioKit”. We try to help where we can. Unfortunately, we do not have the bandwidth for phone or video support. By using StackOverflow it allows more people to benefit from your questions and answers. Thus, allowing us to help more people at once. We try to upvote and encourage all AudioKit questions. There is no shame with needing help or asking questions! You can often receive points on StackOverflow just for asking AudioKit related questions.
+
 ## Thanks and Credits
 
-Huge thanks to all the Beta testers and the folks on the AudioKit Slack Group, AudioBus Forum, & Facebook iPad Muscian's groups! Without out your support and positive feedback and reviews, this would not be possible.
+Huge thanks to all the beta testers and the folks on the AudioKit Slack Group, AudioBus Forum, & Facebook iPad Musician group! Without your support and positive feedback and reviews, this would not be possible.
 
 ROM Player Code, UI, and Sounds by  
-[Matthew M. Fecher](mailto:matthew@audiokitpro.com) | Twitter [@goFecher](http://twitter.com/goFecher) | Github [@swiftcodex](http://github.com/swiftcodex) | 
+[Matthew M. Fecher](mailto:matthew@audiokitpro.com) | Twitter [@goFecher](http://twitter.com/goFecher) | Github [analogcode](http://github.com/analogcode) 
 
 AudioKit Founder  
 [Aure Prochazka](http://twitter.com/audiokitman)
