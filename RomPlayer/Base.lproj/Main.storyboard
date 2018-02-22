@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9NP-AX-2I7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9NP-AX-2I7">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,11 +58,6 @@
                             </view>
                             <view tag="110" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HG8-HI-3KJ" customClass="MIDIKnob" customModule="RomPlayer" customModuleProvider="target">
                                 <rect key="frame" x="948" y="65" width="56" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxc-NR-5o2" customClass="ToggleButton" customModule="RomPlayer" customModuleProvider="target">
-                                <rect key="frame" x="149" y="105" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -137,12 +132,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view tag="110" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ym4-Ie-tFd" customClass="MIDIKnob" customModule="RomPlayer" customModuleProvider="target">
-                                <rect key="frame" x="75" y="100" width="54" height="54"/>
+                                <rect key="frame" x="69" y="100" width="54" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto Pan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBY-pl-Q6R">
-                                <rect key="frame" x="18" y="115" width="48" height="22"/>
+                                <rect key="frame" x="18" y="130" width="48" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                 <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -180,7 +175,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stereo Widen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4x-wx-NIC">
-                                <rect key="frame" x="209" y="131" width="68" height="22"/>
+                                <rect key="frame" x="285" y="130" width="68" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                 <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -215,17 +210,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fox-ss-X3t" customClass="ToggleButton" customModule="RomPlayer" customModuleProvider="target">
-                                <rect key="frame" x="227" y="102" width="28" height="28"/>
+                                <rect key="frame" x="303" y="102" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="On" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7r-DA-GeT">
-                                <rect key="frame" x="151" y="133" width="19" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
-                                <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AudioKit Sample Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuN-5F-e4M">
                                 <rect key="frame" x="418" y="5" width="189" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -351,6 +339,21 @@
                                     <action selector="websitePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vJn-34-BT7"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxc-NR-5o2" customClass="ToggleButton" customModule="RomPlayer" customModuleProvider="target">
+                                <rect key="frame" x="31" y="105" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="110" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tIc-H8-R0L" customClass="MIDIKnob" customModule="RomPlayer" customModuleProvider="target">
+                                <rect key="frame" x="145" y="100" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="110" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFw-jt-3SA" customClass="MIDIKnob" customModule="RomPlayer" customModuleProvider="target">
+                                <rect key="frame" x="221" y="100" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.20784313725490194" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
@@ -358,6 +361,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="299"/>
                     <connections>
+                        <outlet property="attackKnob" destination="tIc-H8-R0L" id="fwe-mx-qaj"/>
                         <outlet property="auditionBass" destination="pKK-1Z-2oX" id="hEd-ix-DjX"/>
                         <outlet property="auditionLead" destination="cF0-kC-q0m" id="rwY-Y8-1BW"/>
                         <outlet property="auditionPoly" destination="Nwx-4N-nS4" id="D22-Xy-Vyu"/>
@@ -377,6 +381,7 @@
                         <outlet property="lfoRateKnob" destination="HG8-HI-3KJ" id="bdg-dM-Fc2"/>
                         <outlet property="masterVolume" destination="nPj-X3-qCt" id="XID-TJ-pV6"/>
                         <outlet property="outputLabel" destination="vuN-5F-e4M" id="PUK-Ia-lJP"/>
+                        <outlet property="releaseKnob" destination="yFw-jt-3SA" id="UY8-Wl-JnL"/>
                         <outlet property="reverbAmtKnob" destination="FTM-m7-gIM" id="OYy-vX-eP7"/>
                         <outlet property="reverbMixKnob" destination="q30-EV-Gwg" id="2KB-9V-1vC"/>
                         <outlet property="reverbToggle" destination="NzE-kX-LBJ" id="jCO-2e-zhN"/>
@@ -387,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="-376"/>
+            <point key="canvasLocation" x="200.9765625" y="-376.171875"/>
         </scene>
         <!--Parent View Controller-->
         <scene sceneID="d6O-Jv-lVo">

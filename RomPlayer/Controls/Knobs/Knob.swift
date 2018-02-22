@@ -46,7 +46,7 @@ public class Knob: UIView, AKSynthOneControl {
     var knobValue: CGFloat = 0.1 {
         didSet(newValue) {
             _value = Double(newValue).denormalized(to: range, taper: taper)
-            callback(_value)
+            //callback(_value)
             self.setNeedsDisplay()
         }
     }

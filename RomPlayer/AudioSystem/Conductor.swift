@@ -112,4 +112,20 @@ class Conductor {
             sampler1.stop(noteNumber: MIDINoteNumber(note), channel: 0)
         }
     }
+    
+    // Sends CC to Sampler (used for Attack/Release)
+    func sendCCToSampler(cc: Int, midiValue: Double) {
+        let controllerNumber = UInt32(cc) // MIDI CC
+        var controllerValue = Int(midiValue)
+        if controllerValue < 0 { controllerValue = 0 }
+        
+        // Send MIDI Status as a CC
+        // Thanks to Dave O'Neill for this code
+        let midiStatus = UInt32(0xB0 | 1)  // 0xB0 == CC in the MIDI spec. // 1 is the Channel
+        MusicDeviceMIDIEvent(sampler1.samplerUnit.audioUnit,
+                             midiStatus,
+                             controllerNumber,
+                             UInt32(controllerValue),
+                             0)
+    }
 }

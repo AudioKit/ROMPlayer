@@ -197,6 +197,10 @@ class ParentViewController: UIViewController {
         let newPreset = exsPresets[position]
         displayLabel.text = newPreset
         conductor.useSound(newPreset)
+        
+        // reset attack/release knob positions
+        auMainController?.attackKnob.knobValue = 0.0
+        auMainController?.releaseKnob.knobValue = 0.33
     }
     
     @objc func displayLabelTapped() {

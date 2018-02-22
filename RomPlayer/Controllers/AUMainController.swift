@@ -45,6 +45,9 @@ class AUMainController: UIViewController {
     @IBOutlet weak var auditionLead: RadioButton!
     @IBOutlet weak var auditionBass: RadioButton!
     
+    @IBOutlet weak var attackKnob: MIDIKnob!
+    @IBOutlet weak var releaseKnob: MIDIKnob!
+    
     @IBOutlet weak var displayContainer: UIView!
     
     var auditionButtons = [RadioButton]()
@@ -135,6 +138,10 @@ class AUMainController: UIViewController {
         crushKnob.taper = 1.0
         crushKnob.value = 0.0
         conductor.decimator.decimation = 0
+        
+        attackKnob.range = 0 ... 127
+        releaseKnob.range = 0 ... 127
+        releaseKnob.value = 33
         
         // radio buttons
         auditionButtons = [auditionBass, auditionLead, auditionPoly]
@@ -307,6 +314,18 @@ class AUMainController: UIViewController {
                 self.outputLabel.text = "Stereo Widen On"
                 self.conductor.fatten.dryWetMix.balance = 1
             }
+        }
+        
+        attackKnob.callback = { value in
+            let ccToSend = 73 // CC for Attack. This can be any CC you have mapped in the EXS File
+            self.conductor.sendCCToSampler(cc: ccToSend, midiValue: value)
+            self.outputLabel.text = "Attack: \(Int(value))"
+        }
+        
+        releaseKnob.callback = { value in
+            let ccToSend = 72 // CC for Release. This can be any CC you have mapped in the EXS File
+            self.conductor.sendCCToSampler(cc: ccToSend, midiValue: value)
+            self.outputLabel.text = "Release: \(Int(value))"
         }
         
     }
