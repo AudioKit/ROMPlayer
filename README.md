@@ -12,7 +12,10 @@ Video introduction for this app and project:
 [https://vimeo.com/244897673](https://vimeo.com/244897673)
 
 The AudioKit FM Player is built with this code:  
-[Download in App Store here](https://itunes.apple.com/us/app/fm-player-classic-dx-synths/id1307785646?ls=1&mt=8).  
+[Download in App Store here](https://itunes.apple.com/us/app/fm-player-classic-dx-synths/id1307785646?ls=1&mt=8).
+
+Update Feb 2, 23, 2018. Video Tutorial on how to add Attack & Release to AUSampler or EXS instruments that you can use in ROM Player:
+[Video Tutorial](https://audiokitpro.com/rom-player-tutorial-video-envelopes/)
 
 ## Code Features
 

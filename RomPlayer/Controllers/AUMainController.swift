@@ -318,13 +318,13 @@ class AUMainController: UIViewController {
         
         attackKnob.callback = { value in
             let ccToSend = 73 // CC for Attack. This can be any CC you have mapped in the EXS File
-            self.conductor.sendCCToSampler(cc: ccToSend, midiValue: value)
+            self.conductor.sampler1.samplerUnit.sendController(UInt8(ccToSend), withValue: UInt8(value), onChannel: 1)
             self.outputLabel.text = "Attack: \(Int(value))"
         }
         
         releaseKnob.callback = { value in
             let ccToSend = 72 // CC for Release. This can be any CC you have mapped in the EXS File
-            self.conductor.sendCCToSampler(cc: ccToSend, midiValue: value)
+            self.conductor.sampler1.samplerUnit.sendController(UInt8(ccToSend), withValue: UInt8(value), onChannel: 1)
             self.outputLabel.text = "Release: \(Int(value))"
         }
         
