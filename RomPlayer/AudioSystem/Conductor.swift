@@ -19,9 +19,7 @@ class Conductor {
     var fatten: Fatten
     var filterSection: FilterSection
 
-    // AutoPan Section
     var autoPanMixer: AKDryWetMixer
-    var limiter: AKStereoFieldLimiter
     var autopan: AutoPan
 
     var multiDelay: PingPongDelay
@@ -57,14 +55,11 @@ class Conductor {
         filterSection = FilterSection(decimator)
         filterSection.output.stop()
 
-        limiter = AKStereoFieldLimiter(filterSection)
-        limiter.amount = 1
-        autopan = AutoPan(limiter)
-
+        autopan = AutoPan(filterSection)
         autoPanMixer = AKDryWetMixer(filterSection, autopan)
-        autoPanMixer.balance = 0
+        autoPanMixer.balance = 0 
 
-        fatten = Fatten(autopan)
+        fatten = Fatten(autoPanMixer)
         
         multiDelay = PingPongDelay(fatten)
         

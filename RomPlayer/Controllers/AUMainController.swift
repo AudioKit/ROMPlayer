@@ -268,10 +268,10 @@ class AUMainController: UIViewController {
         autoPanToggle.callback = { value in
             if value == 0 {
                 self.outputLabel.text = "Auto Pan Off"
-                self.conductor.autopan.mix = 0
+                self.conductor.autoPanMixer.balance = 0
             } else {
                 self.outputLabel.text = "Auto Pan On"
-                self.conductor.autopan.mix = 1
+                self.conductor.autoPanMixer.balance = 1
             }
         }
         

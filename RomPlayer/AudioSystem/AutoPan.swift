@@ -16,7 +16,7 @@ class AutoPan: AKNode {
         }
     }
     
-    var mix = 0.0 {
+    var mix = 1.0 {
         didSet {
             output.parameters = [freq, mix]
         }
