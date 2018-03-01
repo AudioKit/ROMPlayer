@@ -9,16 +9,21 @@ import AudioKit
 
 class Conductor {
     
-    /// Globally accessible
+    // Globally accessible
     static let sharedInstance = Conductor()
-  
+
     var sequencer: AKSequencer!
     var sampler1 = AKMIDISampler()
     var decimator: AKDecimator
     var tremolo: AKTremolo
     var fatten: Fatten
     var filterSection: FilterSection
+
+    // AutoPan Section
+    var autoPanMixer: AKDryWetMixer
+    var limiter: AKStereoFieldLimiter
     var autopan: AutoPan
+
     var multiDelay: PingPongDelay
     var masterVolume = AKMixer()
     var reverb: AKCostelloReverb
@@ -51,8 +56,14 @@ class Conductor {
         decimator = AKDecimator(tremolo)
         filterSection = FilterSection(decimator)
         filterSection.output.stop()
-        
-        autopan = AutoPan(filterSection)
+
+        limiter = AKStereoFieldLimiter(filterSection)
+        limiter.amount = 1
+        autopan = AutoPan(limiter)
+
+        autoPanMixer = AKDryWetMixer(filterSection, autopan)
+        autoPanMixer.balance = 0
+
         fatten = Fatten(autopan)
         
         multiDelay = PingPongDelay(fatten)
