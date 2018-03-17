@@ -40,6 +40,7 @@ class AUMainController: UIViewController {
     @IBOutlet weak var reverbToggle: LedButton!
     @IBOutlet weak var delayToggle: LedButton!
     @IBOutlet weak var autoPanToggle: ToggleButton!
+    @IBOutlet weak var distortionToggle: ToggleButton!
     
     @IBOutlet weak var auditionPoly: RadioButton!
     @IBOutlet weak var auditionLead: RadioButton!
@@ -84,11 +85,11 @@ class AUMainController: UIViewController {
         // Set Default Knob/Control Values
         vol1Knob.range = -9 ... 3
         vol1Knob.value = -2
-        conductor.sampler1.amplitude = -2
+        conductor.sampler1.masterVolume = 0.8
         
-        masterVolume.range = 0 ... 10.0
-        masterVolume.value = 6.0
-        conductor.masterVolume.volume = 6.0
+        masterVolume.range = 0 ... 5.0
+        masterVolume.value = 2.5
+        conductor.masterVolume.volume = 2.5
        
         autoPanRateKnob.range = 0 ... 5
         autoPanRateKnob.taper = 2
@@ -132,7 +133,8 @@ class AUMainController: UIViewController {
         distortKnob.range = 0.6 ... 0.99
         distortKnob.value = 0.6
         conductor.decimator.rounding = 0.0
-        conductor.decimator.mix = 1.0
+        conductor.decimator.mix = 0.0
+        distortionToggle.value = 0
         
         crushKnob.range = 0 ... 0.06
         crushKnob.taper = 1.0
@@ -163,13 +165,13 @@ class AUMainController: UIViewController {
     func setupCallbacks() {
         
         vol1Knob.callback = { value in
-            self.conductor.sampler1.amplitude = value
+            self.conductor.sampler1.masterVolume = pow(10.0, value / 20.0)
             self.outputLabel.text = "Vol Boost: \(value.decimalString) db"
         }
         
         masterVolume.callback = { value in
             self.conductor.masterVolume.volume = value
-            self.outputLabel.text = "Master Vol: \((value/10).percentageString)"
+            self.outputLabel.text = "Master Vol: \((value/self.masterVolume.range.upperBound).percentageString)"
         }
         
         distortKnob.callback = { value in
@@ -285,6 +287,16 @@ class AUMainController: UIViewController {
             }
         }
         
+        distortionToggle.callback = { value in
+            if value == 0 {
+                self.outputLabel.text = "Distortion Off"
+                self.conductor.decimator.mix = 0
+            } else {
+                self.outputLabel.text = "Distortion On"
+                self.conductor.decimator.mix = 1
+            }
+        }
+        
         delayToggle.callback = { value in
             if value == 0 {
                 self.outputLabel.text = "Delay Off"
@@ -317,14 +329,12 @@ class AUMainController: UIViewController {
         }
         
         attackKnob.callback = { value in
-            let ccToSend = 73 // CC for Attack. This can be any CC you have mapped in the EXS File
-            self.conductor.sampler1.samplerUnit.sendController(UInt8(ccToSend), withValue: UInt8(value), onChannel: 1)
+            self.conductor.sampler1.ampAttackTime = 5.0 * value / 127.0
             self.outputLabel.text = "Attack: \(Int(value))"
         }
         
         releaseKnob.callback = { value in
-            let ccToSend = 72 // CC for Release. This can be any CC you have mapped in the EXS File
-            self.conductor.sampler1.samplerUnit.sendController(UInt8(ccToSend), withValue: UInt8(value), onChannel: 1)
+            self.conductor.sampler1.ampReleaseTime = 10.0 * value / 127.0
             self.outputLabel.text = "Release: \(Int(value))"
         }
         

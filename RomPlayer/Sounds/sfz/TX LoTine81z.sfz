@@ -1,0 +1,30 @@
+// this file was generated from TX LoTine81z.exs using vonred's exs2sfz.py. Trickster goddess incoming.
+
+<group>lokey=0 hikey=51 pitch_keycenter=48 pitch_keytrack=100
+	<region> lovel=087 hivel=127 sample=samples/TX LoTine81z_ms0_048_c2.aif
+	<region> lovel=044 hivel=086 sample=samples/TX LoTine81z_ms1_048_c2.aif
+	<region> lovel=000 hivel=043 sample=samples/TX LoTine81z_ms2_048_c2.aif
+<group>lokey=52 hikey=57 pitch_keycenter=54 pitch_keytrack=100
+	<region> lovel=087 hivel=127 sample=samples/TX LoTine81z_ms0_054_f#2.aif
+	<region> lovel=044 hivel=086 sample=samples/TX LoTine81z_ms1_054_f#2.aif
+	<region> lovel=000 hivel=043 sample=samples/TX LoTine81z_ms2_054_f#2.aif
+<group>lokey=58 hikey=63 pitch_keycenter=60 pitch_keytrack=100
+	<region> lovel=087 hivel=127 sample=samples/TX LoTine81z_ms0_060_c3.aif
+	<region> lovel=044 hivel=086 sample=samples/TX LoTine81z_ms1_060_c3.aif
+	<region> lovel=000 hivel=043 sample=samples/TX LoTine81z_ms2_060_c3.aif
+<group>lokey=64 hikey=69 pitch_keycenter=66 pitch_keytrack=100
+	<region> lovel=087 hivel=127 sample=samples/TX LoTine81z_ms0_066_f#3.aif
+	<region> lovel=044 hivel=086 sample=samples/TX LoTine81z_ms1_066_f#3.aif
+	<region> lovel=000 hivel=043 sample=samples/TX LoTine81z_ms2_066_f#3.aif
+<group>lokey=70 hikey=75 pitch_keycenter=72 pitch_keytrack=100
+	<region> lovel=087 hivel=127 sample=samples/TX LoTine81z_ms0_072_c4.aif
+	<region> lovel=044 hivel=086 sample=samples/TX LoTine81z_ms1_072_c4.aif
+	<region> lovel=000 hivel=043 sample=samples/TX LoTine81z_ms2_072_c4.aif
+<group>lokey=76 hikey=81 pitch_keycenter=78 pitch_keytrack=100
+	<region> lovel=087 hivel=127 sample=samples/TX LoTine81z_ms0_078_f#4.aif
+	<region> lovel=044 hivel=086 sample=samples/TX LoTine81z_ms1_078_f#4.aif
+	<region> lovel=000 hivel=043 sample=samples/TX LoTine81z_ms2_078_f#4.aif
+<group>lokey=82 hikey=127 pitch_keycenter=84 pitch_keytrack=100
+	<region> lovel=087 hivel=127 sample=samples/TX LoTine81z_ms0_084_c5.aif
+	<region> lovel=044 hivel=086 sample=samples/TX LoTine81z_ms1_084_c5.aif
+	<region> lovel=000 hivel=043 sample=samples/TX LoTine81z_ms2_084_c5.aif

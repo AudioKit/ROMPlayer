@@ -13,7 +13,7 @@ class Conductor {
     static let sharedInstance = Conductor()
 
     var sequencer: AKSequencer!
-    var sampler1 = AKMIDISampler()
+    var sampler1 = AKSampler()
     var decimator: AKDecimator
     var tremolo: AKTremolo
     var fatten: Fatten
@@ -71,35 +71,42 @@ class Conductor {
        
         // Set Output & Start AudioKit
         AudioKit.output = reverbMixer
-        AudioKit.start()
+        do {
+            try AudioKit.start()
+        } catch {
+            print("AudioKit.start() failed")
+        }
+        
+        // Set a few sampler parameters
+        sampler1.ampReleaseTime = 0.5
   
         // Init sequencer
         midiLoad("rom_poly")
     }
+    
+    func addMidiListener(listener: AKMIDIListener) {
+        midi.addListener(listener)
+    }
 
     func playNote(note: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel) {
-        sampler1.play(noteNumber: note, velocity: velocity, channel: channel)
+        sampler1.play(noteNumber: note, velocity: velocity)
     }
 
     func stopNote(note: MIDINoteNumber, channel: MIDIChannel) {
-        sampler1.stop(noteNumber: note, channel: channel)
+        sampler1.stop(noteNumber: note)
     }
 
     func useSound(_ sound: String) {
-        let exsPath = "Sounds/Sampler Instruments/\(sound)"
-        
-        do {
-            try sampler1.loadEXS24(exsPath)
-        } catch {
-            print("Could not load EXS24")
-        }
+        let soundsFolder = Bundle.main.bundleURL.appendingPathComponent("Sounds/sfz").path
+        sampler1.unloadAllSamples()
+        sampler1.loadUsingSfzFile(folderPath: soundsFolder, sfzFileName: sound + ".sfz")
     }
     
     func midiLoad(_ midiFile: String) {
         let path = "Sounds/midi/\(midiFile)"
         sequencer = AKSequencer(filename: path)
         sequencer.enableLooping()
-        sequencer.setGlobalMIDIOutput(sampler1.midiIn)
+        //sequencer.setGlobalMIDIOutput(sampler1.midiIn)
         sequencer.setTempo(100)
     }
     
@@ -115,7 +122,7 @@ class Conductor {
     
     func allNotesOff() {
         for note in 0 ... 127 {
-            sampler1.stop(noteNumber: MIDINoteNumber(note), channel: 0)
+            sampler1.stop(noteNumber: MIDINoteNumber(note))
         }
     }
 }

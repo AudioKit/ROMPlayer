@@ -67,7 +67,7 @@ class ParentViewController: UIViewController {
         octaveStepper.maxValue = 3
         
         // Add MIDI Listener 👂
-        conductor.midi.addListener(self)
+        conductor.addMidiListener(listener: self)
         
         // Generate random presets 🎲
         randomNumbers = GKShuffledDistribution(lowestValue: 0, highestValue: exsPresets.count - 1)
@@ -354,7 +354,7 @@ extension ParentViewController: AKMIDIListener  {
     // MIDI Controller input
     func receivedMIDIController(_ controller: MIDIByte, value: MIDIByte, channel: MIDIChannel) {
         guard channel == midiChannelIn || omniMode else { return }
-        print("Channel: \(channel+1) controller: \(controller) value: \(value)")
+        //print("Channel: \(channel+1) controller: \(controller) value: \(value)")
         
         // If any MIDI Learn knobs are active, assign the CC
         DispatchQueue.main.async {
@@ -365,6 +365,8 @@ extension ParentViewController: AKMIDIListener  {
         switch controller {
         case AKMIDIControl.modulationWheel.rawValue:
             self.conductor.tremolo.frequency = Double(value)/12.0
+        case AKMIDIControl.damperOnOff.rawValue:
+            self.conductor.sampler1.sustainPedal(pedalDown: value > 0)
         default:
           break
         }
@@ -404,7 +406,7 @@ extension ParentViewController: AKMIDIListener  {
             let scale1 = Double.scaleEntireRange(Double(pitchWheelValue), fromRangeMin: 0, fromRangeMax: 8192, toRangeMin: 12, toRangeMax: 0)
             bendSemi = -(Double.scaleEntireRange(scale1, fromRangeMin: 0, fromRangeMax: 144, toRangeMin: 0, toRangeMax: 12)) * 12
         }
-        conductor.sampler1.tuning = bendSemi
+        conductor.sampler1.pitchBend = bendSemi
     }
     
     // After touch
