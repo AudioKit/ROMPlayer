@@ -106,7 +106,7 @@ class Conductor {
         let path = "Sounds/midi/\(midiFile)"
         sequencer = AKSequencer(filename: path)
         sequencer.enableLooping()
-        //sequencer.setGlobalMIDIOutput(sampler1.midiIn)
+        sequencer.setGlobalMIDIOutput(midi.virtualInput)
         sequencer.setTempo(100)
     }
     
