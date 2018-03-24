@@ -14,9 +14,8 @@ Video introduction for this app and project:
 The AudioKit FM Player is built with this code:  
 [Download in App Store here](https://itunes.apple.com/us/app/fm-player-classic-dx-synths/id1307785646?ls=1&mt=8).
 
-**Update Feb 23, 2018**  
-I made a video tutorial on how to add Attack & Release to EXS and AUSampler instruments:  
-[Video Tutorial: Building iOS Sample Instruments Visually w/ Attack & Release](https://audiokitpro.com/rom-player-tutorial-video-envelopes/)
+## New AKSampler Branch ##
+This code is powered by the new AKSampler code written by Shane Dune. It currently does not use CocoaPods to add AudioKit.  
 
 ## Code Features
 
@@ -32,14 +31,6 @@ I made a video tutorial on how to add Attack & Release to EXS and AUSampler inst
 
 I have tried to streamline this code. There is a focus on the core-functionality to make it easy-to-understand. That being said, audio programming can be challenging. This may be difficult for complete beginners. And, new frameworks can be overwhelming, even for experienced developers. 
 
-**CocoaPods**  
-This repo uses CocoaPods to easily add AudioKit to your project. 
-
-Using the `Terminal` app in your mac, change directories to the folder that contains this project. The correct directory contains a file called `podfile`
-
-Run `pod install` from the command line. This will add AudioKit & AudioKit UI to project
-
-Then open `RomPlayer.xcworkspace` in Xcode
 
 ## Requirements
 
