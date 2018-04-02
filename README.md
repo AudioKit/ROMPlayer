@@ -14,8 +14,10 @@ Video introduction for this app and project:
 The AudioKit FM Player is built with this code:  
 [Download in App Store here](https://itunes.apple.com/us/app/fm-player-classic-dx-synths/id1307785646?ls=1&mt=8).
 
-## New AKSampler Branch ##
-This code is powered by the new AKSampler code written by Shane Dune. It currently does not use CocoaPods to add AudioKit.  
+## New AKSampler Version ##
+This updated code is powered by the new, superior [AKSampler](https://github.com/AudioKit/AudioKit/blob/v4.2/Documentation/AKSampler.md) code written by Shane Dunne. Special thanks to [Shane Dunne](https://github.com/getdunne) for his great work in making this happen. There is a [legacy branch](https://github.com/AudioKit/ROMPlayer/tree/legacy-avsampler) for the previous code based on Apple's sample-playback code. The legacy code plays EXS files. While this new code plays SFZ files.
+
+Shane has also documented tips for [preparing samples](https://github.com/AudioKit/AudioKit/blob/v4.2/Documentation/PreparingSampleSets.md) to use with the new AKSampler. 
 
 ## Code Features
 
@@ -25,7 +27,9 @@ This code is powered by the new AKSampler code written by Shane Dune. It current
 - Reverb, Delay, Bitcrush, AutoPan, Stereo Fatten
 - Lowpass Filter and LFO
 - MIDI Learn knobs
-- Written entirely in Swift 4 & AudioKit 4
+- Features the new cross-platform AKSampler engine
+- Example code written entirely in Swift 4 & AudioKit 4
+- Attack and Release Knobs 
 
 ## Getting Started
 
@@ -44,9 +48,12 @@ If you are new to iOS development, I highly recommend the [Ray Wenderlich](https
 
 ![AK Sample Player](https://i.imgur.com/8FiDeJH.png)
 
-In this repo, I've included four simple instruments I sampled from my TX81z. The LoTine81z sound includes 3 velocity layers. The other sounds include a few samples to demonstrate the sounds without bloating the repo size.
+In this repo, I've included four preset sounds I sampled from my TX81z hardware FM synthesizer using the sampling software [SampleRobot](http://www.samplerobot.com). The LoTine81z sound includes 3 velocity layers. The other sounds include a few samples to demonstrate the sounds while keeping the repo size tight.
+
 
 You are free to use the instruments included in this repo as you see fit- In a game, music app, or just for whatever. It would be cool if you didn't resell them.
+
+AKSampler reads `.wv` files compressed using the open-source [Wavpack](http://www.wavpack.com) software. On the Mac, you must first install the Wavpack command-line tools. Then you can use the following Python 2 script to compress a whole folder-full of `.wav` files. See this excellent [documentation](https://github.com/AudioKit/AudioKit/blob/v4.2/Documentation/PreparingSampleSets.md) by Shane Dunne for more info on preparing samples. 
 
 
 ## Using Samples
@@ -55,13 +62,14 @@ You can replace the included example sample instruments with your own instrument
 
 ![add samples](https://i.imgur.com/TX0j9dy.jpg)
 
-1. Add your EXS24 files and samples to the `/Sounds/Sampler Instruments/` directory
+1. Add your SFZ files and samples to the `/Sounds/sfz/` directory
 2. Type in the name of the instruments in the ParentViewController.swift file
 
 **Other Sampler File Formats**  
-This example code loads EXS24 intruments. For loading Sound Fonts or wave files, please see the [AKSampler](http://audiokit.io/docs/Classes/AKSampler.html) documentation for information on loading different sample types. 
+You can use a tool you already know (such as Kontakt) to create and arrange the sample instrument key mapping and velocity layers. Then, you can easily convert Kontakt instruments to SFZ with tools such as [this](http://www.chickensys.com/translator/). Then, remake the effects using AudioKit. That way, you'll have dynamic sounds and complete control over the effects.
 
-You can use a tool you already know (such as Kontakt) to create and arrange the sample instrument key mapping and velocity layers. Then, you can easily convert Kontakt instruments to EXS24 with tools such as [this](http://www.chickensys.com/translator/). Then, remake the effects using AudioKit. That way, you'll have dynamic sounds and complete control over the effects. 
+This example code loads SFZ intruments. It is recommended that you convert your file formats to SFZ. If you have to use EXS or SF2, there are [other types](https://github.com/AudioKit/AudioKit/blob/v4.2/Documentation/Samplers.md) of sample playback routines in AudioKit you can use instead.
+ 
 
 ## Sound Manipulation
 
@@ -199,17 +207,17 @@ A: We are all volunteers. As we have many commitments, obligations, and projects
 
 Huge thanks to all the beta testers and the folks on the AudioKit Slack Group, AudioBus Forum, & Facebook iPad Musician group! Without your support and positive feedback and reviews, this would not be possible.
 
-ROM Player Code, UI, and Sounds by  
-[Matthew M. Fecher](mailto:matthew@audiokitpro.com) | Twitter [@goFecher](http://twitter.com/goFecher) | Github [analogcode](http://github.com/analogcode) 
+Original ROM Player Code, UI, and Sounds by  
+[Matthew M. Fecher](mailto:matthew@audiokitpro.com) | Twitter [@analogmatthew](http://twitter.com/analogmatthew) | Github [analogcode](http://github.com/analogcode) 
 
-AudioKit Founder  
-[Aure Prochazka](http://twitter.com/audiokitman)
+New AKSampler by
+[Shane Dunne](http://github.com/getdunne)
 
-3D Renderings by  
-[Kevin Loustau](https://twitter.com/KevinLoustau)
+AudioKit Founder [Aure Prochazka](http://twitter.com/audiokitman)
 
-Additional MIDI Enhancements by  
-[Mark Jeschke](https://twitter.com/drumkickapp)
+3D Renderings by [Kevin Loustau](https://twitter.com/KevinLoustau)
+
+Additional MIDI Enhancements by [Mark Jeschke](https://twitter.com/drumkickapp)
 
 This app would not be possible without all the AudioKit contributors:  
 [AudioKit Contributions](https://github.com/AudioKit/AudioKit/graphs/contributors)
