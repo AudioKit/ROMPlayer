@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34F4889A205D76C600486A05 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F48898205D76C600486A05 /* AudioKit.framework */; };
-		34F4889B205D76C600486A05 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F48899205D76C600486A05 /* AudioKitUI.framework */; };
 		940FC29D1FDCD5CC00131899 /* PingPongDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940FC29C1FDCD5CB00131899 /* PingPongDelay.swift */; };
 		943017941F23DE4600A302B2 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9430178E1F23DE4600A302B2 /* Double+Extensions.swift */; };
 		9431F63C1F82CF11000A1718 /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431F63B1F82CF11000A1718 /* PresetCell.swift */; };
@@ -115,8 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34F4889A205D76C600486A05 /* AudioKit.framework in Frameworks */,
-				34F4889B205D76C600486A05 /* AudioKitUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,11 +303,10 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "Matthew Fecher";
+				ORGANIZATIONNAME = "AudioKit Pro";
 				TargetAttributes = {
 					944156D11F2121CC00C139B9 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = W5AEHZN66V;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -528,16 +523,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = RomPlayer/RomPlayer.entitlements;
-				DEVELOPMENT_TEAM = W5AEHZN66V;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../AudioKit/Frameworks/AudioKit-iOS\"",
-				);
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = RomPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_BUNDLE_IDENTIFIER = com.getdunne.romplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.audiokitpro.romplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -552,16 +544,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = RomPlayer/RomPlayer.entitlements;
-				DEVELOPMENT_TEAM = W5AEHZN66V;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../AudioKit/Frameworks/AudioKit-iOS\"",
-				);
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = RomPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_BUNDLE_IDENTIFIER = com.getdunne.romplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.audiokitpro.romplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
