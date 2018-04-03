@@ -6,6 +6,11 @@ Welcome to the official AudioKit example of a sample-based music instrument writ
 
 If you're new to [AudioKit](https://audiokitpro.com/), you can learn more and view getting started links: [here](https://audiokitpro.com/audiokit/).
 
+### Important 
+This branch is the legacy code built with the original AKSampler class based on Apple's AVAudioUnitSampler. This code works with Xcode 9.2 & AudioKit 4.0.3. The [AKSampler](https://github.com/AudioKit/AudioKit/blob/v4.2/Documentation/AKSampler.md) class was rewritten in AudioKit 4.2. This code uses the legacy AKSampler.
+
+For Xcode 9.3/AudioKit 4.2 and above, please see the master branch.
+
 ## App Store Example
 
 Video introduction for this app and project:  
