@@ -36,6 +36,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teU-Q5-74O" customClass="LedButton" customModule="RomPlayer" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="31" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view tag="110" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPj-X3-qCt" customClass="MIDIKnob" customModule="RomPlayer" customModuleProvider="target">
                                 <rect key="frame" x="117" y="11" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -82,7 +87,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view tag="110" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u9z-H6-XMD" customClass="MIDIKnob" customModule="RomPlayer" customModuleProvider="target">
-                                <rect key="frame" x="426" y="190" width="60" height="60"/>
+                                <rect key="frame" x="426" y="195" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -163,14 +168,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distortion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuy-Bc-LXy">
-                                <rect key="frame" x="531" y="256" width="68" height="22"/>
+                                <rect key="frame" x="531" y="261" width="68" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                 <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view tag="110" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWy-JK-HJk" customClass="MIDIKnob" customModule="RomPlayer" customModuleProvider="target">
-                                <rect key="frame" x="535" y="190" width="60" height="60"/>
+                                <rect key="frame" x="535" y="195" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -316,8 +321,8 @@
                                 <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bit Crush" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWp-br-DhA">
-                                <rect key="frame" x="413" y="256" width="68" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bit Crush" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWp-br-DhA">
+                                <rect key="frame" x="422" y="261" width="68" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                 <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -354,6 +359,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rah-gj-agc" userLabel="Distortion Toggle" customClass="LedButton" customModule="RomPlayer" customModuleProvider="target">
+                                <rect key="frame" x="497" y="164" width="31" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.20784313725490194" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
@@ -374,6 +384,7 @@
                         <outlet property="delayToggle" destination="DHj-ee-7ST" id="mRr-3K-0DT"/>
                         <outlet property="displayContainer" destination="YnC-E6-QsX" id="AlE-5g-KEq"/>
                         <outlet property="distortKnob" destination="dWy-JK-HJk" id="jZ6-eL-4E4"/>
+                        <outlet property="distortionToggle" destination="rah-gj-agc" id="5Mb-gd-XNs"/>
                         <outlet property="fattenToggle" destination="fox-ss-X3t" id="Pqc-t7-Vcy"/>
                         <outlet property="filterToggle" destination="5Vr-aF-PpR" id="I2i-3X-iYr"/>
                         <outlet property="freqKnob" destination="8gO-5m-TC4" id="2K6-vu-n6b"/>
