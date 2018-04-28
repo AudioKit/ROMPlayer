@@ -1,5 +1,9 @@
 # AudioKit ROM / Sample Player
 
+[![Build Status](https://travis-ci.org/AudioKit/ROMPlayer.svg)](https://travis-ci.org/AudioKit/ROMPlayer)
+[![License](https://img.shields.io/cocoapods/l/AudioKit.svg?style=flat)](https://github.com/AudioKit/ROMPlayer/blob/master/LICENSE)
+[![Twitter Follow](https://img.shields.io/twitter/follow/AudioKitMan.svg?style=social)](http://twitter.com/AudioKitMan)
+
 ![AK ROM Player](https://i.imgur.com/B9NJ6Ps.png)
 
 Welcome to the official AudioKit example of a sample-based music instrument written in Swift. It can be modified to play EXS24, Wave, or Sound Fonts. This code is lightweight and demonstrates how you can make a beautiful sounding, pro-level instrument with small amount of code. 
