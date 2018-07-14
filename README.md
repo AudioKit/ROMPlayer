@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/AudioKit/ROMPlayer.svg)](https://travis-ci.org/AudioKit/ROMPlayer)
 [![License](https://img.shields.io/cocoapods/l/AudioKit.svg?style=flat)](https://github.com/AudioKit/ROMPlayer/blob/master/LICENSE)
-[![Twitter Follow](https://img.shields.io/twitter/follow/AudioKitMan.svg?style=social)](http://twitter.com/AudioKitMan)
+[![Twitter Follow](https://img.shields.io/twitter/follow/AudioKitPro.svg?style=social)](http://twitter.com/AudioKitPro)
 
 ![AK ROM Player](https://i.imgur.com/B9NJ6Ps.png)
 
