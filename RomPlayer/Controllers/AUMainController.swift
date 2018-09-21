@@ -141,9 +141,9 @@ class AUMainController: UIViewController {
         crushKnob.value = 0.0
         conductor.decimator.decimation = 0
         
-        attackKnob.range = 0 ... 127
-        releaseKnob.range = 0 ... 127
-        releaseKnob.value = 33
+        attackKnob.range = 0.001 ... 6
+        releaseKnob.range = 0.01 ... 5
+        releaseKnob.value = 0.8
         
         // radio buttons
         auditionButtons = [auditionBass, auditionLead, auditionPoly]
@@ -329,12 +329,12 @@ class AUMainController: UIViewController {
         }
         
         attackKnob.callback = { value in
-            self.conductor.sampler1.ampAttackTime = 5.0 * value / 127.0
+            self.conductor.sampler1.attackDuration = value
             self.outputLabel.text = "Attack: \(Int(value))"
         }
         
         releaseKnob.callback = { value in
-            self.conductor.sampler1.ampReleaseTime = 10.0 * value / 127.0
+            self.conductor.sampler1.releaseDuration = value
             self.outputLabel.text = "Release: \(Int(value))"
         }
         

@@ -78,7 +78,7 @@ class Conductor {
         }
         
         // Set a few sampler parameters
-        sampler1.ampReleaseTime = 0.5
+        sampler1.releaseDuration = 0.5
   
         // Init sequencer
         midiLoad("rom_poly")
@@ -99,7 +99,7 @@ class Conductor {
     func useSound(_ sound: String) {
         let soundsFolder = Bundle.main.bundleURL.appendingPathComponent("Sounds/sfz").path
         sampler1.unloadAllSamples()
-        sampler1.loadUsingSfzFile(folderPath: soundsFolder, sfzFileName: sound + ".sfz")
+        sampler1.loadSFZ(path: soundsFolder, fileName: sound + ".sfz")
     }
     
     func midiLoad(_ midiFile: String) {
