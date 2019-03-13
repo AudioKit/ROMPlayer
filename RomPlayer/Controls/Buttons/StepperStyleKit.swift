@@ -68,9 +68,9 @@ public class StepperStyleKit : NSObject {
         let backgroundStyle = NSMutableParagraphStyle()
         backgroundStyle.alignment = .center
         let backgroundFontAttributes = [
-            NSAttributedStringKey.font: UIFont(name: "AvenirNextCondensed-Regular", size: UIFont.systemFontSize)!,
-            NSAttributedStringKey.foregroundColor: textColor,
-            NSAttributedStringKey.paragraphStyle: backgroundStyle,
+            NSAttributedString.Key.font: UIFont(name: "AvenirNextCondensed-Regular", size: UIFont.systemFontSize)!,
+            NSAttributedString.Key.foregroundColor: textColor,
+            NSAttributedString.Key.paragraphStyle: backgroundStyle,
         ]
 
         let backgroundTextHeight: CGFloat = text.boundingRect(with: CGSize(width: backgroundRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: backgroundFontAttributes, context: nil).height

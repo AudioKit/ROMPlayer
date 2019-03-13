@@ -48,10 +48,10 @@ class PopUpKeySettingsController: UIViewController {
     
     // Set fonts for UISegmentedControls
     override func viewDidLayoutSubviews() {
-        let attr = NSDictionary(object: UIFont(name: "Avenir Next Condensed", size: 16.0)!, forKey: NSAttributedStringKey.font as NSCopying)
-        labelModeSegment.setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
-        keyboardModeSegment.setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
-        octaveRangeSegment.setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
+      let attr = [NSAttributedString.Key.font: UIFont(name: "Avenir Next Condensed", size: 16.0)!]
+      labelModeSegment.setTitleTextAttributes(attr, for: .normal)
+      keyboardModeSegment.setTitleTextAttributes(attr, for: .normal)
+      octaveRangeSegment.setTitleTextAttributes(attr, for: .normal)
     }
     
     // **********************************************************

@@ -86,7 +86,7 @@ class ParentViewController: UIViewController {
         bluetoothButton.layer.borderWidth = 1
         
         // Get Embedded AUController
-        if let embeddedController = self.childViewControllers.first as? AUMainController {
+        if let embeddedController = self.children.first as? AUMainController {
             auMainController = embeddedController
         }
         
@@ -414,7 +414,7 @@ extension ParentViewController: AKMIDIListener  {
         print("midi setup change, midi.inputNames: \(conductor.midi.inputNames)")
         let inputNames = conductor.midi.inputNames
         inputNames.forEach { inputName in
-            conductor.midi.openInput(inputName)
+            conductor.midi.openInput(name: inputName)
         }
     }
    

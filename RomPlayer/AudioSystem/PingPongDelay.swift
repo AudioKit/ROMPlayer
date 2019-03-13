@@ -64,11 +64,11 @@ class PingPongDelay: AKNode, AKInput {
         leftPanner.pan = -1
         rightPanner.pan = 1
 
-        leftCompensator.rampTime = rampTime
-        leftDelayDelay.rampTime = rampTime
-        leftDelay.rampTime = rampTime
-        rightDelay.rampTime = rampTime
-        finalBooster.rampTime = rampTime
+        leftCompensator.rampDuration = rampTime
+        leftDelayDelay.rampDuration = rampTime
+        leftDelay.rampDuration = rampTime
+        rightDelay.rampDuration = rampTime
+        finalBooster.rampDuration = rampTime
 
         input >>> leftDelay
         input >>> rightDelay

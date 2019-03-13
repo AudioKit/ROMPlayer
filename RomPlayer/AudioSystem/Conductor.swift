@@ -29,7 +29,7 @@ class Conductor {
         
         // MIDI Configure
         midi.createVirtualPorts()
-        midi.openInput("Session 1")
+        midi.openInput(name: "Session 1")
         midi.openOutput()
     
         // Session settings
@@ -65,18 +65,30 @@ class Conductor {
        
         // Set Output & Start AudioKit
         AudioKit.output = reverbMixer
-        AudioKit.start()
+        do {
+          try AudioKit.start()
+        } catch {
+          AKLog("Could not start AudioKit.")
+        }
   
         // Init sequencer
         midiLoad("rom_poly")
     }
 
     func playNote(note: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel) {
-        sampler1.play(noteNumber: note, velocity: velocity, channel: channel)
+        do {
+          try sampler1.play(noteNumber: note, velocity: velocity, channel: channel)
+        } catch {
+          AKLog("Could not play note \(note)")
+        }
     }
 
     func stopNote(note: MIDINoteNumber, channel: MIDIChannel) {
-        sampler1.stop(noteNumber: note, channel: channel)
+        do {
+          try sampler1.stop(noteNumber: note, channel: channel)
+        } catch {
+          AKLog("Could not stop note \(note)")
+        }
     }
 
     func useSound(_ sound: String) {
@@ -108,8 +120,12 @@ class Conductor {
     }
     
     func allNotesOff() {
+      do {
         for note in 0 ... 127 {
-            sampler1.stop(noteNumber: MIDINoteNumber(note), channel: 0)
+          try sampler1.stop(noteNumber: MIDINoteNumber(note), channel: 0)
         }
+      } catch {
+        AKLog("Could not stop all notes")
+      }
     }
 }
