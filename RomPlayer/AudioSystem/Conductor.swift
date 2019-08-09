@@ -12,7 +12,7 @@ class Conductor {
     // Globally accessible
     static let sharedInstance = Conductor()
 
-    var sequencer: AKSequencer!
+    var sequencer: AKAppleSequencer!
     var sampler1 = AKSampler()
     var decimator: AKDecimator
     var tremolo: AKTremolo
@@ -32,7 +32,7 @@ class Conductor {
         
         // MIDI Configure
         midi.createVirtualPorts()
-        midi.openInput("Session 1")
+        midi.openInput(name: "Session 1")
         midi.openOutput()
     
         // Session settings
@@ -104,7 +104,7 @@ class Conductor {
     
     func midiLoad(_ midiFile: String) {
         let path = "Sounds/midi/\(midiFile)"
-        sequencer = AKSequencer(filename: path)
+        sequencer = AKAppleSequencer(filename: path)
         sequencer.enableLooping()
         sequencer.setGlobalMIDIOutput(midi.virtualInput)
         sequencer.setTempo(100)
