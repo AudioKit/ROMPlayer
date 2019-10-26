@@ -86,7 +86,7 @@ class ParentViewController: UIViewController {
         bluetoothButton.layer.borderWidth = 1
         
         // Get Embedded AUController
-        if let embeddedController = self.childViewControllers.first as? AUMainController {
+        if let embeddedController = self.children.first as? AUMainController {
             auMainController = embeddedController
         }
         

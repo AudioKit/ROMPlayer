@@ -51,7 +51,7 @@ public class TopUIButtonStyleKit : NSObject {
             .font: UIFont(name: "AvenirNext-Regular", size: textSize)!,
             .foregroundColor: UIColor.lightGray,
             .paragraphStyle: rectangleStyle,
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         
         let rectangleTextHeight: CGFloat = text.boundingRect(with: CGSize(width: rectangleRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: rectangleFontAttributes, context: nil).height
         context.saveGState()
