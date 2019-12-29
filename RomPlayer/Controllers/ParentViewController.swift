@@ -325,8 +325,12 @@ extension ParentViewController: AKKeyboardDelegate {
 // **********************************************************
 
 extension ParentViewController: AKMIDIListener  {
-    
-    func receivedMIDINoteOn(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel) {
+
+    func receivedMIDINoteOn(noteNumber: MIDINoteNumber,
+                            velocity: MIDIVelocity,
+                            channel: MIDIChannel,
+                            portID: MIDIUniqueID? = nil,
+                            offset: MIDITimeStamp = 0) {
         guard channel == midiChannelIn || omniMode else { return }
         
         DispatchQueue.main.async {
@@ -334,7 +338,11 @@ extension ParentViewController: AKMIDIListener  {
         }
     }
     
-    func receivedMIDINoteOff(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel) {
+    func receivedMIDINoteOff(noteNumber: MIDINoteNumber,
+                             velocity: MIDIVelocity,
+                             channel: MIDIChannel,
+                             portID: MIDIUniqueID? = nil,
+                             offset: MIDITimeStamp = 0) {
         guard (channel == midiChannelIn || omniMode) && !keyboardView.holdMode else { return }
         
         DispatchQueue.main.async {
@@ -352,7 +360,10 @@ extension ParentViewController: AKMIDIListener  {
     }
     
     // MIDI Controller input
-    func receivedMIDIController(_ controller: MIDIByte, value: MIDIByte, channel: MIDIChannel) {
+    func receivedMIDIController(_ controller: MIDIByte,
+                                value: MIDIByte, channel: MIDIChannel,
+                                portID: MIDIUniqueID? = nil,
+                                offset: MIDITimeStamp = 0) {
         guard channel == midiChannelIn || omniMode else { return }
         //print("Channel: \(channel+1) controller: \(controller) value: \(value)")
         
@@ -383,7 +394,10 @@ extension ParentViewController: AKMIDIListener  {
     }
     
     // MIDI Program/Patch Change
-    func receivedMIDIProgramChange(_ program: MIDIByte, channel: MIDIChannel) {
+    func receivedMIDIProgramChange(_ program: MIDIByte,
+                                   channel: MIDIChannel,
+                                   portID: MIDIUniqueID? = nil,
+                                   offset: MIDITimeStamp = 0) {
         guard channel == midiChannelIn || omniMode else { return }
         
         // Smoothly cycle through presets if MIDI input is greater than preset count
@@ -395,7 +409,10 @@ extension ParentViewController: AKMIDIListener  {
     }
     
     // MIDI Pitch Wheel
-    func receivedMIDIPitchWheel(_ pitchWheelValue: MIDIWord, channel: MIDIChannel) {
+    func receivedMIDIPitchWheel(_ pitchWheelValue: MIDIWord,
+                                channel: MIDIChannel,
+                                portID: MIDIUniqueID? = nil,
+                                offset: MIDITimeStamp = 0) {
         guard channel == midiChannelIn || omniMode else { return }
         
         var bendSemi = 0.0
@@ -410,7 +427,10 @@ extension ParentViewController: AKMIDIListener  {
     }
     
     // After touch
-    func receivedMIDIAfterTouch(_ pressure: MIDIByte, channel: MIDIChannel) {
+    func receivedMIDIAfterTouch(_ pressure: MIDIByte,
+                                channel: MIDIChannel,
+                                portID: MIDIUniqueID? = nil,
+                                offset: MIDITimeStamp = 0) {
         guard channel == midiChannelIn || omniMode else { return }
         self.conductor.tremolo.frequency = Double(pressure)/20.0
     }
