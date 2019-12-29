@@ -68,3 +68,6 @@ fastlane/test_output
 
 # CocoaPods
 Pods/*
+
+# macOS Noise
+.DS_Store 
