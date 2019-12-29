@@ -240,7 +240,7 @@ public protocol AKKeyboardDelegate: class {
                 .font: UIFont(name: "AvenirNextCondensed-Regular", size: 14)!,
                 .foregroundColor: textColor,
                 .paragraphStyle: whiteKeysStyle,
-                ] as [NSAttributedStringKey: Any]
+                ] as [NSAttributedString.Key: Any]
             
             let whiteKeysTextHeight: CGFloat = whiteKeysTextContent.boundingRect(with: CGSize(width: whiteKeysRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: whiteKeysFontAttributes, context: nil).height
             context.saveGState()
