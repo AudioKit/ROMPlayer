@@ -574,7 +574,7 @@
 				CODE_SIGN_ENTITLEMENTS = RomPlayer/RomPlayer.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RomPlayer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.audiokitpro.romplayer;
@@ -595,7 +595,7 @@
 				CODE_SIGN_ENTITLEMENTS = RomPlayer/RomPlayer.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RomPlayer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.audiokitpro.romplayer;
