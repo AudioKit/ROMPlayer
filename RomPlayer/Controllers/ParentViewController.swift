@@ -427,7 +427,7 @@ extension ParentViewController: AKMIDIListener  {
     }
     
     // After touch
-    func receivedMIDIAfterTouch(_ pressure: MIDIByte,
+    func receivedMIDIAftertouch(_ pressure: MIDIByte,
                                 channel: MIDIChannel,
                                 portID: MIDIUniqueID? = nil,
                                 offset: MIDITimeStamp = 0) {
